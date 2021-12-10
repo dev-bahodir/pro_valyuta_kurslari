@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_100"
+        tools:context=".fragment.main.X1Fragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple_100">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabMode"
+                app:tabMode="scrollable"
+                android:layout_marginTop="10dp"
+                app:tabIndicatorHeight="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:tabRippleColor="@android:color/transparent"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_main"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabMode" />
+
+            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                android:id="@+id/spring_dots_indicator"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dampingRatio="0.5"
+                app:layout_constraintTop_toBottomOf="@id/vp_main"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:dotsColor="#4CAF50"
+                app:dotsStrokeColor="#8F8F8F"
+                app:dotsCornerRadius="10dp"
+                app:dotsSize="10dp"
+                app:dotsSpacing="2dp"
+                app:dotsStrokeWidth="1dp"
+                app:stiffness="300" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cons_back"
+                android:paddingHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/spring_dots_indicator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:textColor="@color/black"
+                    android:textSize="22.5sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="Valyutalarning o'zgarish tarixi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons1"
+                    app:layout_constraintTop_toBottomOf="@id/tv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:background="#C5C3C3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <TextView
+                        android:id="@+id/date1"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="23.10.2021"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date1"
+                        app:layout_constraintLeft_toLeftOf="@id/date1"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="19:00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date2"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv1"
+                        app:layout_constraintLeft_toRightOf="@id/date1"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Sotilishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date2"
+                        app:layout_constraintLeft_toLeftOf="@id/date2"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date3"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="80dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv1"
+                        app:layout_constraintLeft_toRightOf="@id/date2"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Olinishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date3"
+                        app:layout_constraintLeft_toLeftOf="@id/date3"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons2"
+                    app:layout_constraintTop_toBottomOf="@id/cons1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:background="#C5C3C3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <TextView
+                        android:id="@+id/date11"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv2"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="23.10.2021"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date11"
+                        app:layout_constraintLeft_toLeftOf="@id/date11"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="19:00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date22"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv2"
+                        app:layout_constraintLeft_toRightOf="@id/date11"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Sotilishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date22"
+                        app:layout_constraintLeft_toLeftOf="@id/date22"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date33"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="80dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv2"
+                        app:layout_constraintLeft_toRightOf="@id/date22"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Olinishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date33"
+                        app:layout_constraintLeft_toLeftOf="@id/date33"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons3"
+                    app:layout_constraintTop_toBottomOf="@id/cons2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv111"
+                        android:background="#C5C3C3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <TextView
+                        android:id="@+id/date111"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv111"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="23.10.2021"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date111"
+                        app:layout_constraintLeft_toLeftOf="@id/date111"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="19:00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date222"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv111"
+                        app:layout_constraintLeft_toRightOf="@id/date111"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Sotilishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date222"
+                        app:layout_constraintLeft_toLeftOf="@id/date222"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date333"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="80dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv111"
+                        app:layout_constraintLeft_toRightOf="@id/date222"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Olinishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date333"
+                        app:layout_constraintLeft_toLeftOf="@id/date333"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons4"
+                    app:layout_constraintTop_toBottomOf="@id/cons3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv1111"
+                        android:background="#C5C3C3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <TextView
+                        android:id="@+id/date1111"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv1111"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="23.10.2021"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date1111"
+                        app:layout_constraintLeft_toLeftOf="@id/date1111"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="19:00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date2222"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv1111"
+                        app:layout_constraintLeft_toRightOf="@id/date1111"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Sotilishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date2222"
+                        app:layout_constraintLeft_toLeftOf="@id/date2222"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date3333"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="80dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv1111"
+                        app:layout_constraintLeft_toRightOf="@id/date2222"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Olinishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date3333"
+                        app:layout_constraintLeft_toLeftOf="@id/date3333"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    app:layout_constraintTop_toBottomOf="@id/cons4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv11111"
+                        android:background="#C5C3C3"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                    <TextView
+                        android:id="@+id/date11111"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv11111"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="23.10.2021"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date11111"
+                        app:layout_constraintLeft_toLeftOf="@id/date11111"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="19:00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date22222"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="30dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv11111"
+                        app:layout_constraintLeft_toRightOf="@id/date11111"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Sotilishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date22222"
+                        app:layout_constraintLeft_toLeftOf="@id/date22222"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/date33333"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="80dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv11111"
+                        app:layout_constraintLeft_toRightOf="@id/date22222"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="Olinishi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/date33333"
+                        app:layout_constraintLeft_toLeftOf="@id/date33333"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:text="10530.87 UZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
